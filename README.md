@@ -41,6 +41,8 @@
     select sum(quantity) from orders;
         2125
 # How much was spent on books? #
+    elect sum((items.price * orders.quantity)) as total from orders join items on items.id = orders.item_id where items.category like '%Books%';
+        1081352
 
 # Simulate buying an item by inserting a User for yourself and an Order for that User. #
     insert into users (id, first_name, last_name, email) values ('51', 'Jennifer', 'Bonner', 'jenniferbonner12@gmail.com');
